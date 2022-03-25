@@ -31,7 +31,7 @@ class TeamsPlugin extends Plugin {
      */
     function onTicketCreated(Ticket $ticket) {
         global $cfg;
-        $type = 'Issue created: ';
+        $type = 'Ticket created: ';
         if (!$cfg instanceof OsticketConfig) {
             error_log("Teams plugin called too early.");
             return;
@@ -48,10 +48,10 @@ class TeamsPlugin extends Plugin {
      * @return type
      */
     function onTicketUpdated(ThreadEntry $entry) {
-        $type = 'Issue Updated: ';
+        $type = 'Ticket Updated: ';
         global $cfg;
         if (!$cfg instanceof OsticketConfig) {
-            error_log("Slack plugin called too early.");
+            error_log("Teams plugin called too early.");
             return;
         }
         if (!$entry instanceof MessageThreadEntry) {
