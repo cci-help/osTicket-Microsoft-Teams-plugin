@@ -20,20 +20,22 @@ class TeamsPluginConfig extends PluginConfig {
         return Plugin::translate('teams');
     }
 
-    function pre_save($config, &$errors) {
-        if ($config['slack-regex-subject-ignore'] && false === @preg_match("/{$config['slack-regex-subject-ignore']}/i", null)) {
-            $errors['err'] = 'Your regex was invalid, try something like "spam", it will become: "/spam/i" when we use it.';
-            return FALSE;
-        }
-        return TRUE;
-    }
+// Data check function below breaks with PHP<8.0 and isn't needed
+    // function pre_save($config, &$errors) {
+    //     if ($config['slack-regex-subject-ignore'] && false === @preg_match("/{$config['slack-regex-subject-ignore']}/i", null)) {
+    //         $errors['err'] = 'Your regex was invalid, try something like "spam", it will become: "/spam/i" when we use it.';
+    //         return FALSE;
+    //     }
+    //     return TRUE;
+    // }
+
 
     function getOptions() {
         list ($__, $_N) = self::translate();
 
         return array(
             'teams'                      => new SectionBreakField(array(
-                'label' => $__('Slack notifier'),
+                'label' => $__('Microsoft Teams notifier'),
                 'hint'  => $__('Readme first: https://github.com/ipavlovi/osTicket-Microsoft-Teams-plugin')
             )),
             'teams-webhook-url'          => new TextboxField(array(
