@@ -4,7 +4,7 @@ osTicket-microsoft-teams
 ==============
 An plugin for [osTicket](https://osticket.com) which posts notifications to a [Microsoft Teams](https://products.office.com/en-us/microsoft-teams/group-chat-software) channel.
 
-Originally forked from: [https://github.com/clonemeagain/osticket-slack](https://github.com/clonemeagain/osticket-slack).
+Originally forked from: [https://github.com/ipavlovi/osTicket-Microsoft-Teams-plugin](https://github.com/ipavlovi/osTicket-Microsoft-Teams-plugin).
 
 Info
 ------
